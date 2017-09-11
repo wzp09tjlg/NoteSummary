@@ -1,0 +1,7 @@
+安卓中难免会使用到listview 或者是gridView 甚至现在比较推荐的recycleView等显示大量数据的控件，针对这样的控件显示数据一般都是我们自己去写如何去显示数据的适配。每当数据有变化时需要我们自己去做变动，通知控件重画动作：
+ 调用的方法有：notify()   notifyAll()  notifyDataSetChange() notifyDataSetInvalidate()这些方法：
+
+notifyDataSetChanged方法通过一个外部的方法控制如果适配器的内容改变时需要强制调用getView来刷新每个Item的内容。该方法内部实现了在每个观察者上面调用onChanged事件。每当发现数据集有改变的情况，或者读取到数据的新状态时，就会调用此方法。
+notifyDataSetInvalidate该方法内部实现了在每个观察者上面调用onInvalidated事件。每当发现数据集监控有改变的情况，比如该数据集不再有效，就会调用此方法。
+notifyDataSetInvalidated()，会重绘控件（还原到初始状态）
+notifyDataSetChanged()，重绘当前可见区域

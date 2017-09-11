@@ -1,0 +1,6 @@
+安卓开发中使用listview是经常的事儿，在listview中添加header和footer也是常有的事，但是在这是listview的header是必须在设置adapter之前设置header的，所以在一开始就得确定header中应该显示什么view。
+
+但是会有这样的场景出现，就是在使用listview时，存在多种状态，有的状态需要显示header有的状态不需要显示header。这时就比较麻烦。因为不可能是删掉header，之后再加入header。因为header是必须得在设置adapter之前设置的，所以只能考虑隐藏的方式。一般的做法就是获得header中view的引用，然后针对view的显示状态做处理。测试效果是可以隐藏，但是header中的位置却还是存在，他会在原来的位置上留有一个空白。真是尴尬。
+
+这里寻找这样一种处理方式。就是在headerview中 添加到另一个布局中，然后针对布局做隐藏，这样能达到隐藏的效果。感觉很方便。
+之前项目中实现的方案 是获取header中view的引用，然后针对view高度做变化。也能达到隐藏的效果。

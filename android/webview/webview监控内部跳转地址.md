@@ -1,0 +1,3 @@
+在安卓开发中经常用到webview的加载数据，不使用手机的webview来加载地址。需要给webview注入一个webviewClient的对象。
+1.在webview中重写shouldOverrideUrlLoading方法，能够获取到webview自动加载的任何地址，但是在外部调用webview.goback()就不会走shouldOverrideUrlLoading方法。
+2.为以后的扩展性 在shouldOverrideUrlLoading中根据地址做处理，其实不是一种很好的方案，为以后的扩展，可以采用前端h5页面调用本地方法,传参数过来解析。

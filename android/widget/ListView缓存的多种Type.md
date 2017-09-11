@@ -1,0 +1,6 @@
+在ListView中经常会使用到展示不同数据类型的Item，这里就需要理解下关于listView的缓存原理，和对类型区分的处理：
+listView中的缓存：
+因为ListView中展示的数据很大，不可能将所有的数据都加载进来，一是安卓中内存机制不允许，二是也完全没有必要将数据加载进来，如果用户不翻到最后一页，加载数据就是浪费。所以安卓中使用的一种复用的技术来解决这方面的问题。在ListView中会保存有listView能显示的Item的个数加上各种类型的个数。(如果说有三种item，然后在前台能显示9个item，那么缓存中会存在9 + 3 = 12个缓存item)
+
+listView中的类型区分：
+重写方法getItemType();  getItemTypeCount(); 这两个方法是用来区分这个listView中能显示多少中Item的，其中getItemType()是我们在重写getView中区分应该加载哪种类型的布局。
