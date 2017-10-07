@@ -1,0 +1,25 @@
+### Java的基本知识(基于疯狂Java第二版) ###
+
+#### 1.Java的基本类型 ####
+  数据类型：byte short  int long float double char boolean
+  基本运算符：+ - * / % ^ ...
+  关系运算符：== > >= < <= !=
+  逻辑运算符：|| && !
+  位运算符：>>  <<  |  &  ^
+
+#### 2.流程控制语句 ####
+  循环：for()   foreach()   whle(){}    do{}while();
+  判断: if()  switch(){} (在Java7之前只能比对char byte short int,在Java7之后 也可以比比对String了)
+  控制语句:continue  break  return
+
+#### 3.面向对象(1) ####
+  this 的理解：this 表示当前对象。
+  super的理解：super 表示父类对象
+  访问权限：private  protected  public  默认包权限
+  封装 继承 多态：
+  Java类的单继承，接口的多继承
+
+#### 4.面向对象(2) ####
+  instanceOf 比较是否是 某个类的子类
+  == 和 equal()  :== 比较的是地址  equal()比较的是值
+  比较对象的时候 为什么要写haseCode() 同 equal()方法一块写：hascode 不相等的对象 一定是不相同的，所以会去重写hasCode方法。(hase表能够提高查询的速度，所以在保存大量数据的时候，Java会根据bean 对象的hasecode 来做比较。这样会提高速度，如果仅仅是通过equal方法 比较对象的保存地址，在数据两巨大的情况下 会非常慢。并且在某些情况下  并不是保存的地址不相等就不是同一个对象，所以在某些情况下会重写hasecode这个方法)
